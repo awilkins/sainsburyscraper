@@ -4,9 +4,6 @@
 
 * Create a project with a POM file
 * Add some dependencies for tests
-* Since we're using Maven, start a `site/markdown` folder for documentation
-  * `mvn site` seems to be [broken](https://stackoverflow.com/questions/51091539/maven-site-plugins-3-3-java-lang-classnotfoundexception-org-apache-maven-doxia)
-  
 
 ## Step 1
 
