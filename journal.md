@@ -23,3 +23,9 @@ first in the search results.
 We're also going to need something to help us serialize to JSON and it seems that [Gson](https://github.com/google/gson)
 is a reasonable choice for this.
 
+
+## Step 3 - foundations
+
+We're going to need to output results, so we need a result class.
+
+
