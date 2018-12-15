@@ -7,6 +7,8 @@ import java.math.BigDecimal;
 public class Result {
 
     private String title;
+
+    @SerializedName("kcal_per_100g")
     private Integer kiloCaloriesPerHundredGrams;
     private BigDecimal unitPrice;
     private String description;
