@@ -7,14 +7,21 @@ import static org.hamcrest.CoreMatchers.*;
 public class ResultTest {
 
     final String TITLE = "Sainsbury's Strawberries";
+    final String DESCRIPTION = "Delicious, juicy, strawberries";
 
     private Result result = new Result(
-            TITLE
+            TITLE,
+            DESCRIPTION
     );
 
     @Test
     public void resultHasTitle() {
         assertThat(result.getTitle(), equalTo(TITLE));
+    }
+
+    @Test
+    public void resultHasDescription() {
+        assertThat(result.getDescription(), equalTo(DESCRIPTION));
     }
 
 }
