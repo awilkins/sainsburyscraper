@@ -8,10 +8,18 @@ public class Result {
     private String description;
     private BigDecimal unitPrice;
 
+    private Integer kiloCaloriesPerHundredGrams;
+
+
     public Result(String title, String description, BigDecimal unitPrice) {
+        this(title, description,unitPrice, null);
+    }
+
+    public Result(String title, String description, BigDecimal unitPrice, Integer kiloCaloriesPerHundredGrams) {
         this.title = title;
         this.description = description;
         this.unitPrice = unitPrice;
+        this.kiloCaloriesPerHundredGrams = kiloCaloriesPerHundredGrams;
     }
 
     public String getTitle() {
@@ -24,5 +32,9 @@ public class Result {
 
     public BigDecimal getUnitPrice() {
         return unitPrice;
+    }
+
+    public Integer getKiloCaloriesPerHundredGrams() {
+        return kiloCaloriesPerHundredGrams;
     }
 }

@@ -36,4 +36,15 @@ public class ResultTest {
         assertThat(result.getUnitPrice(), equalTo(PRICE));
     }
 
+    @Test
+    public void kiloCaloriesAreOptional() {
+       assertThat(result.getKiloCaloriesPerHundredGrams(), equalTo(null));
+    }
+
+    @Test
+    public void kiloCaloriesCanHappen() {
+        Result result = new Result(TITLE, DESCRIPTION, PRICE, 100);
+        assertThat(result.getKiloCaloriesPerHundredGrams(), equalTo(100));
+    }
+
 }
