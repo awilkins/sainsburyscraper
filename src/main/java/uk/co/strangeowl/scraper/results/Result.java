@@ -1,14 +1,15 @@
 package uk.co.strangeowl.scraper.results;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.math.BigDecimal;
 
 public class Result {
 
     private String title;
-    private String description;
-    private BigDecimal unitPrice;
-
     private Integer kiloCaloriesPerHundredGrams;
+    private BigDecimal unitPrice;
+    private String description;
 
 
     public Result(String title, String description, BigDecimal unitPrice) {
