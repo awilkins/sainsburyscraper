@@ -15,10 +15,13 @@ public class ResultTest {
     // Using BigDecimal here to avoid floating-point errors on currency
     final BigDecimal PRICE = new BigDecimal("1.75");
 
+    final int CALORIES = 100;
+
     private Result result = new Result(
             TITLE,
             DESCRIPTION,
-            PRICE
+            PRICE,
+            CALORIES
     );
 
     @Test
@@ -38,12 +41,12 @@ public class ResultTest {
 
     @Test
     public void kiloCaloriesAreOptional() {
+        Result result = new Result(TITLE, DESCRIPTION, PRICE);
        assertThat(result.getKiloCaloriesPerHundredGrams(), equalTo(null));
     }
 
     @Test
-    public void kiloCaloriesCanHappen() {
-        Result result = new Result(TITLE, DESCRIPTION, PRICE, 100);
+    public void resultCanHaveKiloCalories() {
         assertThat(result.getKiloCaloriesPerHundredGrams(), equalTo(100));
     }
 
