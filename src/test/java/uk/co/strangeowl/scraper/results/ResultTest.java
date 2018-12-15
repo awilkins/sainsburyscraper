@@ -66,6 +66,7 @@ public class ResultTest {
 
         Gson gson = new GsonBuilder()
                 .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
+                .disableHtmlEscaping()
                 .setPrettyPrinting()
                 .create();
 
