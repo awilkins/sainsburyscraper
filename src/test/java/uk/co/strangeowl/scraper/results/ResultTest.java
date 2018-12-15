@@ -3,9 +3,6 @@ package uk.co.strangeowl.scraper.results;
 
 import com.google.common.base.Charsets;
 import com.google.common.io.Resources;
-import com.google.gson.FieldNamingPolicy;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import org.junit.Test;
 
 import java.io.IOException;
