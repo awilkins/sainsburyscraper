@@ -1,7 +1,14 @@
 package uk.co.strangeowl.scraper.results;
 
+
+import com.google.common.base.Charsets;
+import com.google.common.io.Resources;
+import com.google.gson.FieldNamingPolicy;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import org.junit.Test;
 
+import java.io.IOException;
 import java.math.BigDecimal;
 
 import static org.hamcrest.MatcherAssert.*;
@@ -48,6 +55,23 @@ public class ResultTest {
     @Test
     public void resultCanHaveKiloCalories() {
         assertThat(result.getKiloCaloriesPerHundredGrams(), equalTo(100));
+    }
+
+    @Test
+    public void resultJsonMatchesSpec() throws IOException {
+        final String EXPECTED = Resources.toString(
+                Resources.getResource(ResultTest.class, "expected.json"),
+                Charsets.UTF_8
+        );
+
+        Gson gson = new GsonBuilder()
+                .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
+                .setPrettyPrinting()
+                .create();
+
+        final String ACTUAL = gson.toJson(result);
+
+        assertThat(ACTUAL, equalTo(EXPECTED));
     }
 
 }
