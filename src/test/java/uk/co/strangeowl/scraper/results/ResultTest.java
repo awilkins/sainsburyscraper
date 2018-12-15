@@ -11,6 +11,8 @@ public class ResultTest {
 
     final String TITLE = "Sainsbury's Strawberries";
     final String DESCRIPTION = "Delicious, juicy, strawberries";
+
+    // Using BigDecimal here to avoid floating-point errors on currency
     final BigDecimal PRICE = new BigDecimal("1.75");
 
     private Result result = new Result(
