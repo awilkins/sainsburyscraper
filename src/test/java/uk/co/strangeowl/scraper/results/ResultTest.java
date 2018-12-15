@@ -64,13 +64,9 @@ public class ResultTest {
                 Charsets.UTF_8
         );
 
-        Gson gson = new GsonBuilder()
-                .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
-                .disableHtmlEscaping()
-                .setPrettyPrinting()
-                .create();
 
-        final String ACTUAL = gson.toJson(result);
+        final String ACTUAL = ResultSerializer.serialize(result);
+
 
         assertThat(ACTUAL, equalTo(EXPECTED));
     }
