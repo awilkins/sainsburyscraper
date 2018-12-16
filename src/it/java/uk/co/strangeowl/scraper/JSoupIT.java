@@ -9,7 +9,7 @@ import java.io.IOException;
 import static org.hamcrest.MatcherAssert.*;
 import static org.hamcrest.CoreMatchers.*;
 
-public class JsoupTest {
+public class JSoupIT {
 
     @Test
     public void jsoupCanFetchTestPage() throws IOException {
