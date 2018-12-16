@@ -58,4 +58,10 @@ public class ProductPageScraperTest {
         BigDecimal expected = new BigDecimal("1.75");
         assertThat(price, equalTo(expected));
     }
+
+    @Test
+    public void canGetKcalPerHundredGrams() {
+        Integer kcals = ProductPageScraper.getKcalsPerHundredGrams(strawberries);
+        assertThat(kcals, equalTo(33));
+    }
 }
