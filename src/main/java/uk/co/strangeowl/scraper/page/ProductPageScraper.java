@@ -5,7 +5,6 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.math.BigDecimal;
-import java.text.StringCharacterIterator;
 
 public class ProductPageScraper {
 
