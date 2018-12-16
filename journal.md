@@ -28,4 +28,16 @@ is a reasonable choice for this.
 
 We're going to need to output results, so we need a result class.
 
+We need to make that serialize nicely to match the output in the specs.
 
+We also need a class to aggregate the results and do the totals.
+
+## Step 4 - scraping
+
+By opening the pages in a browser and opening the developer console, I can test the CSS I need
+to get the information off the page.
+
+
+## Step 5 - bringing it together
+
+Now we have a results object and the ability to scrape results from the pages.
