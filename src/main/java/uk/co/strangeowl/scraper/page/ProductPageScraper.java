@@ -27,7 +27,7 @@ public class ProductPageScraper {
 
     public static Integer getKcalsPerHundredGrams(Document page) {
         Elements nutritionCells = page.select("tr[class*=\"tableRow\"] > td:first-of-type");
-        Element kilocals = ((org.jsoup.select.Elements) nutritionCells).stream()
+        Element kilocals = nutritionCells.stream()
                 .filter(element -> element.text().contains("kcal"))
                 .findAny()
                 .orElse(null);
