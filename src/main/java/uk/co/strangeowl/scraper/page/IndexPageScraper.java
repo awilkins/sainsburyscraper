@@ -13,7 +13,7 @@ public class IndexPageScraper {
      * @return
      */
     public static List<String> productLinks(Document page) {
-        Elements links = page.select(".product a");
+        Elements links = page.select(".productInfo a");
         return links.eachAttr("href");
     }
 
