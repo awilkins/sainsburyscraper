@@ -15,8 +15,8 @@ public class ProductPageScraper {
     }
 
     public static BigDecimal getUnitPrice(Document page) {
-        return new BigDecimal(
-                page.selectFirst(".pricePerUnit p").text()
-        );
+        String priceText = page.selectFirst(".pricePerUnit").text();
+        System.out.println(priceText);
+        return new BigDecimal(priceText);
     }
 }
