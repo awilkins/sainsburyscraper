@@ -64,4 +64,10 @@ public class ProductPageScraperTest {
         Integer kcals = ProductPageScraper.getKcalsPerHundredGrams(strawberries);
         assertThat(kcals, equalTo(33));
     }
+
+    @Test
+    public void kcalsIsNullWhenAbsent() {
+        Integer kcals = ProductPageScraper.getKcalsPerHundredGrams(cherryBerries);
+        assertThat(kcals, nullValue());
+    }
 }
