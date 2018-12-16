@@ -1,0 +1,14 @@
+{
+  "results": [
+    {
+      "title": "Cheese",
+      "kcal_per_100g": 120,
+      "unit_price": 2.50,
+      "description": "Very nice cheese, Grommit"
+    }
+  ],
+  "total": {
+    "gross": 2.50,
+    "vat": 0.50
+  }
+}

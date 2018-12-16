@@ -6,7 +6,7 @@ import com.google.gson.GsonBuilder;
 
 public class ResultSerializer {
 
-    public static String serialize(Result result) {
+    public static String serialize(Object result) {
 
         Gson gson = new GsonBuilder()
                 .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
