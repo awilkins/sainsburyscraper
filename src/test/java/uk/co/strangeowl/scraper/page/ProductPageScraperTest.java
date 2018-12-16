@@ -5,6 +5,7 @@ import com.google.common.io.Resources;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.junit.Test;
+import uk.co.strangeowl.scraper.results.Result;
 
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -32,6 +33,7 @@ public class ProductPageScraperTest {
 
     static final Document strawberries = getPage("strawberries.html");
     static final Document cherryBerries = getPage("cherry-and-strawberry-pack.html");
+    static final Document blackcurrants = getPage("blackcurrants.html");
 
     @Test
     public void canGetTitle() {
@@ -53,6 +55,12 @@ public class ProductPageScraperTest {
     }
 
     @Test
+    public void blackCurrantsHaveABadDescription() {
+        String description = ProductPageScraper.getDescription(blackcurrants);
+        assertThat(description, equalTo("Union Flag"));
+    }
+
+    @Test
     public void canGetUnitPrice() {
         BigDecimal price = ProductPageScraper.getUnitPrice(strawberries);
         BigDecimal expected = new BigDecimal("1.75");
@@ -69,5 +77,14 @@ public class ProductPageScraperTest {
     public void kcalsIsNullWhenAbsent() {
         Integer kcals = ProductPageScraper.getKcalsPerHundredGrams(cherryBerries);
         assertThat(kcals, nullValue());
+    }
+
+    @Test
+    public void canGetAResult() {
+        Result result = ProductPageScraper.scrape(strawberries);
+        assertThat(result.getTitle(), equalTo("Sainsbury's Strawberries 400g"));
+        assertThat(result.getDescription(), equalTo("by Sainsbury's strawberries"));
+        assertThat(result.getUnitPrice(), equalTo(new BigDecimal(1.75)));
+        assertThat(result.getKiloCaloriesPerHundredGrams(), equalTo(33));
     }
 }
