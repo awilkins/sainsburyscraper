@@ -7,6 +7,7 @@ import org.jsoup.nodes.Document;
 import org.junit.Test;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 
 import static org.hamcrest.MatcherAssert.*;
 import static org.hamcrest.CoreMatchers.*;
@@ -34,10 +35,27 @@ public class ProductPageScraperTest {
 
     @Test
     public void canGetTitle() {
-
         String title = ProductPageScraper.getTitle(strawberries);
-
         assertThat(title, equalTo("Sainsbury's Strawberries 400g"));
     }
 
+    @Test
+    public void canGetDescription() {
+        String description = ProductPageScraper.getDescription(strawberries);
+        assertThat(description, equalTo("by Sainsbury's strawberries"));
+    }
+
+    @Test
+    public void onlyGetFirstLineOfDescription() {
+        String description = ProductPageScraper.getDescription(cherryBerries);
+        assertThat(description, equalTo("British Cherry & Strawberry Mixed Pack"));
+        assertThat(description, not(containsString("Union Flag")));
+    }
+
+    @Test
+    public void canGetUnitPrice() {
+        BigDecimal price = ProductPageScraper.getUnitPrice(strawberries);
+        BigDecimal expected = new BigDecimal("1.75");
+        assertThat(price, equalTo(expected));
+    }
 }
