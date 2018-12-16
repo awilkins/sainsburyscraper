@@ -1,0 +1,2 @@
+#!/usr/bin/env sh
+java -jar target/sainsbury-scraper-0.0.1-SNAPSHOT-jar-with-dependencies.jar
